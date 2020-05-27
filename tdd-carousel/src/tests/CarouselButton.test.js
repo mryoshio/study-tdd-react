@@ -10,4 +10,9 @@ describe('carousel button', () => {
     const wrapper = shallow(<CarouselButton />)
     expect(wrapper.type()).toBe('button')
   })
+  it('passses `children` through the button', () => {
+    const text = 'foobar'
+    const wrapper = shallow(<CarouselButton>{text}</CarouselButton>)
+    expect(wrapper.prop('children')).toBe(text)
+  })
 })
