@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const CarouselButton = ({ children }) => {
-  return <button>{children}</button>
+const CarouselButton = (props) => {
+  return <button {...props} />
 }
 
 CarouselButton.propTypes = {
