@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint . && prettier-eslint --list-different **/*.js",
+    "lint": "eslint . && prettier-eslint --list-different src/**/*.js",
     "format": "prettier-eslint --write **/*.js"
   },
   "keywords": [],
@@ -28,6 +28,7 @@
     "react-dom": "^16.4.2"
   },
   "dependencies": {
+    "node-gyp": "^7.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.4.2"
   }
