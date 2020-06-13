@@ -4,7 +4,7 @@ import CarouselSlide from './CarouselSlide'
 
 class Carousel extends React.PureComponent {
   state = {
-    slideIndex: 0
+    slideIndex: 0,
   }
   render() {
     const { slides, ...rest } = this.props
@@ -19,13 +19,13 @@ class Carousel extends React.PureComponent {
   handlePrevClick = () => {
     const { slides } = this.props
     this.setState(({ slideIndex }) => ({
-      slideIndex: (slideIndex + slides.length - 1) % slides.length
+      slideIndex: (slideIndex + slides.length - 1) % slides.length,
     }))
   }
   handleNextClick = () => {
     const { slides } = this.props
     this.setState(({ slideIndex }) => ({
-      slideIndex: (slideIndex + 1) % slides.length
+      slideIndex: (slideIndex + 1) % slides.length,
     }))
   }
 }
