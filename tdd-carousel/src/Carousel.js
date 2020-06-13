@@ -1,11 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import CarouselButton from './CarouselButton'
 import CarouselSlide from './CarouselSlide'
 
 class Carousel extends React.PureComponent {
+  static PropTypes = {
+    slides: PropTypes.arrayOf(PropTypes.shape(CarouselSlide.propTypes)).isRequired,
+  }
+
   state = {
     slideIndex: 0,
   }
+
   render() {
     const { slides, ...rest } = this.props
     return (
