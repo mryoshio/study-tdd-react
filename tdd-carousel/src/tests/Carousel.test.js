@@ -34,4 +34,16 @@ describe('carousel', () => {
         .prop('children')
     ).toBe('next')
   })
+
+  it('decrements slideIndex when prev clicked', () => {
+    wrapper.setState({ slideIndex: 1 })
+    wrapper.find("[data-action='prev']").simulate('click')
+    expect(wrapper.state('slideIndex')).toBe(0)
+  })
+
+  it('increments slideIndex when prev clicked', () => {
+    wrapper.setState({ slideIndex: 0 })
+    wrapper.find("[data-action='next']").simulate('click')
+    expect(wrapper.state('slideIndex')).toBe(1)
+  })
 })
