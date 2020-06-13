@@ -11,5 +11,8 @@ describe('carousel', () => {
   it('renders a <div>', () => {
     expect(wrapper.type()).toBe('div')
   })
-})
 
+  it('has an initial index of 0', () => {
+    expect(wrapper.state('slideIndex')).toBe(0)
+  })
+})
