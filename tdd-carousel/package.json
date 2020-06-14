@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint . && prettier-eslint --list-different src/**/*.js",
-    "format": "prettier-eslint --write **/*.js"
+    "format": "prettier-eslint --write **/*.js",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
