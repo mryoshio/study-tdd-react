@@ -74,8 +74,8 @@ describe('carousel', () => {
       wrapper.setState({ slideIndex: 0 })
     })
     it('renders the current slide as a carousel slide', () => {
-      let attribution = wrapper.find(CarouselSlide).props().attribution
-      expect(attribution).toEqual(slides[0].attribution)
+      let slideProps = wrapper.find(CarouselSlide).props()
+      expect(slideProps).toEqual({ ...CarouselSlide.defaultProps, ...slides[0]} )
     })
     it('decrements slideIndex when prev clicked', () => {
       wrapper.find("[data-action='prev']").simulate('click')
@@ -88,8 +88,8 @@ describe('carousel', () => {
       wrapper.setState({ slideIndex: slides.length - 1 })
     })
     it('renders the current slide as a carousel slide', () => {
-      let attribution = wrapper.find(CarouselSlide).props().attribution
-      expect(attribution).toEqual(slides[slides.length-1].attribution)
+      let slideProps = wrapper.find(CarouselSlide).props()
+      expect(slideProps).toEqual({ ...CarouselSlide.defaultProps, ...slides[slides.length-1] })
     })
     it('decrements slideIndex when next clicked', () => {
       wrapper.find("[data-action='next']").simulate('click')
