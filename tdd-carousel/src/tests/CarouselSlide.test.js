@@ -16,12 +16,12 @@ describe('carousel slide', () => {
     expect(wrapper.type()).toBe('figure')
   })
   it('renders a <img> and a <figcaption> as children', () => {
-    expect(wrapper.childAt(0).type()).toBe('img')
+    expect(wrapper.childAt(0).type()).toBe(CarouselSlide.defaultProps.Img)
     expect(wrapper.childAt(1).type()).toBe('figcaption')
   })
   it('passes `imgUrl` through to the <img>', () => {
     wrapper.setProps({ imgUrl })
-    const img = wrapper.find('img')
+    const img = wrapper.find(CarouselSlide.defaultProps.Img)
     expect(img.prop('src')).toBe(imgUrl)
   })
   it('uses description and attribution as <figcaption>', () => {
